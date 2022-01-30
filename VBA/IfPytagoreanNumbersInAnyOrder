@@ -1,0 +1,65 @@
+Function TrojkaPitagorejska() As Boolean
+    
+    If (n1 >= n2) And (n1 >= n3) Then
+        
+        If (n1 * n1) > ((n2 * n2) + (n3 * n3)) Then
+            
+            TrojkaPitagorejska = TRUE
+            
+        Else
+            
+            Trojka Pitagorejska = FALSE
+            
+        End If
+        
+    End If
+    
+    If (n2 >= n1) And (n2 >= n3) Then
+        
+        If (n2 * n2) > ((n1 * n1) + (n3 * n3)) Then
+            
+            TrojkaPitagorejska = TRUE
+            
+        Else
+            
+            Trojka Pitagorejska = FALSE
+            
+        End If
+        
+    End If
+    
+    If (n3 >= n1) And (n3 >= n2) Then
+        
+        If (n3 * n3) > ((n2 * n2) + (n1 * n1)) Then
+            
+            TrojkaPitagorejska = TRUE
+            
+        Else
+            
+            Trojka Pitagorejska = FALSE
+            
+        End If
+        
+    End If
+    
+End Function
+
+Sub Zadanie()
+    
+    Dim n1, n2, n3  As Double
+    
+    n1 = InputBox("Wpisz pierwsza liczbe", "1 liczba")
+    n2 = InputBox("Wpisz druga liczbe", "2 liczba")
+    n3 = InputBox("Wpisz trzecia liczbe", "3 liczba")
+    
+    If TrojkaPitagorejska(n1, n2, n3) = TRUE Then
+        
+        MsgBox ("Trojka pitagorejska = True")
+        
+    Else
+        
+        MsgBox ("Trojka pitagorejska = False")
+        
+    End If
+    
+End Sub

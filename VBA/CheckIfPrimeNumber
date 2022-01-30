@@ -1,0 +1,66 @@
+Public Function primeNumber(n) As Integer
+    
+    Dim count, num
+    
+    count = 1
+    num = 3
+    
+    If n = 1 Then
+        
+        primeNumber = 2
+        Exit Function
+        
+    End If
+    
+    Do Until count = n
+        
+        If is_prime(num) = TRUE Then
+            
+            count = count + 1
+            
+            If count = n + 1 Then
+                
+                primeNumber = num
+                Exit Function
+                
+            End If
+            num = num + 2
+            
+        End If
+        
+    Loop
+    
+End Function
+
+Public Function is_prime(num) As Boolean
+    
+    factor = 2
+    
+    Do While TRUE
+        
+        If factor < num Then
+            If num Mod factor = 0 Then
+                is_prime = FALSE
+                Exit Function
+                
+            Else
+                factor = factor + 1
+            End If
+            
+        End If
+        is_prime = TRUE
+        Exit Function
+        Exit Do
+    Loop
+End Function
+
+Sub Zadanie2()
+    
+    Dim n
+    
+    n = 5
+    Dim num         As Double
+    
+    MsgBox ("Liczba pierwsza: " & primeNumber(n))
+    
+End Sub
